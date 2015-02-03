@@ -451,7 +451,6 @@
 					parentOffsetTop: parentOffsetTop,
 					stellarRatio: ($this.data('stellar-background-ratio') === undefined ? 1 : $this.data('stellar-background-ratio'))
 				});
-				
 			});
 		},
 		_reset: function() {

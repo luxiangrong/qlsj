@@ -43,14 +43,9 @@
 	};
 
 	var isFF = 'MozAppearance' in document.documentElement.style;
-	var usedTime = 0;
-	var changedValue = 0;
 
 	$.fn.smoothScroll = function (options) {
 		var opts = $.extend({}, $.fn.smoothScroll.defaults, options);
-		if(isFF) {
-			return;
-		}
 		return $(this).each(function () {
 			var $this = $(this);
 			_scrollable($this).on(isFF?'DOMMouseScroll':'mousewheel', function(e){
@@ -67,12 +62,9 @@
 				}
 				if(delta * oldDelta < 0) {
 					oldDelta = 0;
-					usedTime = 0;
-					changedValue = 0;
 				} 
 				$(this).data('delta', oldDelta + delta);
-				console.log(oldDelta + delta);
-				_animate($(this), {scrollTop: opts.step * (oldDelta + delta) - changedValue}, {during: opts.during - usedTime, easing: opts.easing});
+				_animate($(this), {scrollTop: opts.step * (oldDelta + delta)}, {during: opts.during, easing: opts.easing});
 			});
 			
 		});
@@ -96,35 +88,29 @@
 	//自定义动画函数
 	var requestAnimationId;
 	function _animate($obj, props, options){
-		// window.setTimeout(function(){
-			// $obj.data('delta', 0);
-		// },100);
+		window.setTimeout(function(){
+			$obj.data('delta', 0);
+		},100);
 		if(requestAnimationId) cancelAnimationFrame(requestAnimationId);
 		if(props.scrollTop) {
 			var oldScrollTop = $obj.scrollTop();
 			var distance = props.scrollTop;
 		}
-		if(options.easing) {
-			var easing = options.easing;
+		if(props.easing) {
+			var easing = props.easing;
 		} else {
 			var easing = 'swing';
 		}
 		var start = 0, during = options.during, current = new Date().getTime(); 
 		var _run = function(){
 			start = new Date().getTime() - current;
-			console.log(easing);
 			var newTop = $.easing[easing](0, start, oldScrollTop, distance, during);
 			$obj.scrollTop(newTop);
-			usedTime = start;
-			changedValue = newTop - oldScrollTop;
 			if (start < during) {
          		requestAnimationId = requestAnimationFrame(_run);
          	} else {
          		$obj.data('delta', 0);
-         		usedTime = 0;
-				changedValue = 0;
          	} 
-         	
 		};
 		_run();
 	}
