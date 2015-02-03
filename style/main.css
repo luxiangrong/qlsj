@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:Arial, "微软雅黑"; color:#333;}
+a{color:#333; text-decoration:none; outline:none;}
+a:active{star:expression(this.onFocus=this.blur());} 
+img{border:0px;}
+a:link {text-decoration: none; outline:none;}
+a:visited{text-decoration: none; outline:none;}
+a:hover{text-decoration:none; color:#da2143; outline:none;}
+ul, p, dl, dt, dd{padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{font-size:14px; padding:0px; margin:0px;}
+h1{font-size:16px;}
+h5{font-size:12px;}
+.fl{float:left;}
+.fr{float:right;}
+.clear_f{clear:both; height:0px; padding:0px; margin:0px; display:block; _display:inherit;}
+.h10{height:10px; overflow:hidden; clear:both;}
+.h50{height:50px; overflow:hidden; clear:both;}
+input{background:transparent; padding:0px; font-size:12px; font-family:Arial, "微软雅黑"; color:#888; border:0px; outline:none;}
+em{font-style:normal;}
+
+.wal{width:985px; margin:0px auto;}
+.w897{width:897px; margin:0px auto;}
+
+.pageLogo{position:fixed; z-index:51; left:50%; top:0px; margin-left:-515px;}
+.nav{height:66px; width:100%; position:fixed; z-index:50; left:0px; top:0px; background:#1f2228;}
+.nav li{float:left; padding-left:1px;}
+.nav a{display:block; float:left; height:66px; line-height:66px; padding:0 20px; white-space:nowrap; font-size:15px; color:#FFF;}
+.nav a:hover, .nav .aNow, .nav .aNow1, .nav .aNow2{background:#da2143;}
+.navDiv{height:66px;}
+
+.sNav{position:fixed; z-index:50; top:66px; width:150px; background:url(../image/bg3.png); display:none;}
+.sNav a{display:block; color:#FFF; font-size:16px; height:40px; line-height:40px; border-bottom:#ccc solid 1px; text-align:center;}
+.sNav a:hover{background:#da2143;}
+
+.loginLayer{position:fixed; z-index:49; top:60px; background:url(../image/bg8.png) left top no-repeat; width:206px; height:125px; display:none;}
+.loginLayer .form{padding:23px 0 0 30px;}
+.loginLayer li{height:30px; overflow:hidden; position:relative;}
+.loginLayer li img{position:absolute; left:10px; top:3px;}
+.loginLayer .input1{float:left; background:url(../image/input.png) left top no-repeat; width:160px; height:20px; line-height:20px; text-indent:30px; color:#FFF;}
+.loginLayer .btnDiv{text-align:center; padding-top:6px;}
+.loginLayer .btn1{width:50px; height:22px; background:#da2143; color:#FFF; cursor:pointer;}
+
+.footDiv{height:60px; line-height:60px; overflow:hidden; background:#232323; border-top:#c60e30 solid 8px; color:#d3d3d3;}
+.footDiv2{position:fixed; z-index:20; left:0px; width:100%; bottom:0px;}
+
+.sideBar{position:fixed; z-index:50; right:0px; bottom:70px; width:45px;}
+.sideBar li{height:45px; width:45px; overflow:hidden; margin-left:auto; margin-bottom:1px; background:#1b1b1d;}
+.sideBar .li_01{background:none; height:50px;}
+.sideBar .li_01 a, .sideBar .li_01 a:hover{background:url(../image/topA.png) left top no-repeat; height:50px; display:block;}
+.sideBar img{float:left;}
+.sideBar a em{float:left; line-height:45px; color:#FFF;}
+.sideBar dd{float:left; width:45px; overflow:hidden; position:relative;}
+/*.sideBar dd a:hover{background:#c7203f;}
+.sideBar dd a img{position:absolute; z-index:-1; left:0px; top:0px;}*/
+/*.sideBar a:hover{background:#da2143;}*/
+.ewmLayer{position:fixed; z-index:55; right:42px; bottom:70px; background:url(../image/ewmLayer.png) left top no-repeat; width:267px; height:151px; display:none;}
+.ewmLayer li{float:left; width:130px; padding-top:9px; overflow:hidden; text-align:center;}
+.ewmLayer li div{height:116px;}
+.ewmLayer li img{padding:4px; border:#f0eff0 solid 1px;}
+
+.qqLayer{position:fixed; z-index:50; right:45px; bottom:194px; width:165px; height:95px; background:#da2143; color:#FFF; padding-top:11px; display:none;}
+.qqLayer li{height:31px; line-height:20px;}
+.qqLayer em{float:left; padding:0 3px 0 11px;}
+
+.pageNum{text-align:center; height:115px; padding-top:50px;}
+.pageNum a{display:inline-block; width:31px; height:18px; line-height:18px; text-align:center; color:#FFF; background:url(../image/pageNum.png) center top no-repeat;}
+.pageNum a:hover, .pageNum .aNow{background:url(../image/pageNumOn.png) center top no-repeat;}
+
+#Layer1{
+	position:absolute;
+	position:fixed;
+	_position:absolute;
+	width:100%;
+	z-index:99;
+	top:0; left:0px;
+	background-color:#000;
+	display:none;
+}
+
+.tabContent{display:none;}
+
+
+
+
+
+
+
+
+
