@@ -510,6 +510,29 @@
 
 		<script>
 			$(document).ready(function() {
+				function check_os() {
+					windows = (navigator.userAgent.indexOf("Windows",0) != -1)?1:0;
+					mac = (navigator.userAgent.indexOf("mac",0) != -1)?1:0;
+					linux = (navigator.userAgent.indexOf("Linux",0) != -1)?1:0;
+					unix = (navigator.userAgent.indexOf("X11",0) != -1)?1:0;
+				 
+				 	var os_type;
+					if (windows) os_type = "MS Windows";
+					else if (mac) os_type = "Apple mac";
+					else if (linux) os_type = "Lunix";
+					else if (unix) os_type = "Unix";
+				 
+					return os_type;
+				}
+				
+				if(check_os() == "MS Windows") {
+					$(window).smoothScroll({
+						step : 50, //每次滚轮事件，页面滚动的距离
+						during : 300,
+						easing : 'easeOutCubic'
+					});
+				}
+				
 				// 解决position:fixed时滚动条的宽度对width的影响
 				$("body").height($(window).height() + 100);
 				$(".aboutPart2").height($("body").width() * 578 / 1280);

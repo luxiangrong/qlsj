@@ -708,6 +708,7 @@
 					linux = (navigator.userAgent.indexOf("Linux",0) != -1)?1:0;
 					unix = (navigator.userAgent.indexOf("X11",0) != -1)?1:0;
 				 
+				 	var os_type;
 					if (windows) os_type = "MS Windows";
 					else if (mac) os_type = "Apple mac";
 					else if (linux) os_type = "Lunix";
@@ -720,7 +721,7 @@
 					$(window).smoothScroll({
 						step : 50, //每次滚轮事件，页面滚动的距离
 						during : 300,
-						easing : 'easeOutCubic',
+						easing : 'easeOutCubic'
 					});
 				}
 
