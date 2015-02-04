@@ -51,9 +51,9 @@ em{font-style:normal;}
 .sideBar .li_01 a, .sideBar .li_01 a:hover{background:url(../image/topA.png) left top no-repeat; height:50px; display:block;}
 .sideBar img{float:left;}
 .sideBar a em{float:left; line-height:45px; color:#FFF;}
-.sideBar dd{float:left; width:45px; overflow:hidden; position:relative;}
-/*.sideBar dd a:hover{background:#c7203f;}
-.sideBar dd a img{position:absolute; z-index:-1; left:0px; top:0px;}*/
+.sideBar dd{float:left;}
+.sideBar dd a{display:block; width:45px; height:45px; overflow:hidden; cursor:pointer;}
+.sideBar dd a:hover{background:#c7203f;}
 /*.sideBar a:hover{background:#da2143;}*/
 .ewmLayer{position:fixed; z-index:55; right:42px; bottom:70px; background:url(../image/ewmLayer.png) left top no-repeat; width:267px; height:151px; display:none;}
 .ewmLayer li{float:left; width:130px; padding-top:9px; overflow:hidden; text-align:center;}

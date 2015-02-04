@@ -33,7 +33,7 @@ ZoomPic.prototype =
 		this.timer = setInterval(function ()
 		{
 			_this.doNext()	
-		}, 3000);		
+		}, 300000);		
 		this.wrap.onmouseover = function ()
 		{
 			clearInterval(_this.timer)
@@ -43,7 +43,7 @@ ZoomPic.prototype =
 			_this.timer = setInterval(function ()
 			{
 				_this.doNext()	
-			}, 3000);	
+			}, 300000);	
 		}
 	},
 	doPrev : function ()

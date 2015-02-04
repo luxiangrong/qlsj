@@ -306,7 +306,6 @@ $(function(){
 	//--关于我们顶部视差滚动
 	//--底部位置
 	if($(window).height()>$('body,html').height()){
-		$('.footDiv').addClass('footDiv2');
 		}
 	//
 	})
