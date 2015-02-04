@@ -136,11 +136,11 @@
 			</div>
 		</div>
 
-		<div class="indexPart1 parallax-view" style="position: fixed; width: 100%; height: 506px; z-index: 2; top: 800px" data-stellar-ratio="1.8">
+		<div class="indexPart1 parallax-view" style="position: fixed; width: 100%; height: 526px; z-index: 2; top: 800px" data-stellar-ratio="1.65" data-stellar-vertical-offset="-50">
 			<div class="aboutTitle">
 				<h1>资讯中心</h1>INFORMATION CENTER
 			</div>
-			<div class="tab">
+			<div class="tab" style="margin-bottom: 10px; margin-top: 10px;">
 				<ul>
 					<li class="liNow">
 						中心动态
@@ -253,7 +253,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="tabIco">
+			<div class="tabIco" style="">
 				<ul>
 					<li class="liNow"></li>
 					<li></li>
@@ -274,7 +274,7 @@
 			});
 		</script>
 
-		<div class="parallax-view" style="position: fixed;z-index: 1; background-color: #fff;" data-stellar-ratio="1" data-stellar-vertical-offset="400">
+		<div class="parallax-view" style="padding-top: 100px; position: fixed;z-index: 1; background-color: #fff;" data-stellar-ratio="1" data-stellar-vertical-offset="400">
 			<div class="aboutTitle">
 				<h1>课程介绍</h1>THE SPORTS COURSE
 			</div>
@@ -599,7 +599,7 @@
 			</div>
 			<iframe scrolling="no" width="100%" height="430px" frameborder="0" src="indexPart4.html"></iframe>
 		</div>
-		<div class="parallax-view" id="last-parallax" style="position: fixed;z-index: 2" data-stellar-ratio="1.5" data-stellar-vertical-offset="-20">
+		<div class="parallax-view" id="last-parallax" style="position: fixed;z-index: 2" data-stellar-ratio="1.5" data-stellar-vertical-offset="-50">
 			<div class="indexPart5">
 				<div class="aboutTitle">
 					<h1>联系我们</h1>CONTACT US
@@ -701,6 +701,28 @@
 
 		<script>
 			$(document).ready(function() {
+				
+				function check_os() {
+					windows = (navigator.userAgent.indexOf("Windows",0) != -1)?1:0;
+					mac = (navigator.userAgent.indexOf("mac",0) != -1)?1:0;
+					linux = (navigator.userAgent.indexOf("Linux",0) != -1)?1:0;
+					unix = (navigator.userAgent.indexOf("X11",0) != -1)?1:0;
+				 
+					if (windows) os_type = "MS Windows";
+					else if (mac) os_type = "Apple mac";
+					else if (linux) os_type = "Lunix";
+					else if (unix) os_type = "Unix";
+				 
+					return os_type;
+				}
+				
+				if(check_os() == "MS Windows") {
+					$(window).smoothScroll({
+						step : 50, //每次滚轮事件，页面滚动的距离
+						during : 300,
+						easing : 'easeOutCubic',
+					});
+				}
 
 				$('.indexFlash').height($(window).width() / 2 - 100);
 				$(".address-img").height($(window).width() * 407 / 1280);
@@ -711,7 +733,7 @@
 					documentHeight += $(this).outerHeight();
 
 				});
-				$("body").height((parseInt($("#last-parallax").css("top").replace("px", "")) + $("#last-parallax").height() - $(window).height()) / 1.5 + $(window).height() + 16);
+				$("body").height((parseInt($("#last-parallax").css("top").replace("px", "")) + $("#last-parallax").height() - $(window).height()) / 1.5 + $(window).height() + 46);
 
 				$(window).stellar({
 					hideDistantElements : true,
