@@ -534,18 +534,26 @@
 				}
 				
 				// 解决position:fixed时滚动条的宽度对width的影响
-				$("body").height($(window).height() + 100);
-				$(".aboutPart2").height($("body").width() * 578 / 1280);
+				function clacSize() {
+					$("body").height($(window).height() + 100);
+					$(".aboutPart2").height($("body").width() * 578 / 1280);
+	
+					var documentHeight = 0;
+					var reduceHeight = 0;
+					$(".parallax-view").each(function(i, item) {
+						$(this).css("top", documentHeight + "px");
+						documentHeight += $(this).outerHeight();
+	
+					});
+					
+					$("body").height((parseInt($("#last-parallax").css("top").replace("px", "")) + $("#last-parallax").height() - $(window).height()) / 1 + $(window).height() - 300);
 
-				var documentHeight = 0;
-				var reduceHeight = 0;
-				$(".parallax-view").each(function(i, item) {
-					$(this).css("top", documentHeight + "px");
-					documentHeight += $(this).outerHeight();
-
-				});
+				}
+				clacSize();
 				
-				$("body").height((parseInt($("#last-parallax").css("top").replace("px", "")) + $("#last-parallax").height() - $(window).height()) / 1 + $(window).height() - 300);
+				$(window).on('resize', function(){
+					clacSize();
+				});
 
 				$(window).stellar();
 

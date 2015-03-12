@@ -216,7 +216,7 @@ border-radius:3px;
 .indexFlash .bg{position:relative; top:0px;}
 .indexFlash .bg img{width:100%;}
 
-.indexPart1{min-height:200px; _height:200px; position:relative; background:#f5f5f5;}
+.indexPart1{min-height:200px; _height:200px; position:relative; background:#f0f0f0;}
 .indexPart1 .tab{width:300px; height:90px; overflow:hidden; margin:0 auto;}
 .indexPart1 .tab li{background:url(../image/pageTab.png) center top no-repeat; width:150px; height:40px; line-height:40px; text-align:center; color:#777; font-size:20px; float:left; cursor:pointer;}
 .indexPart1 .tab .liNow{background:url(../image/pageTabOn.png) center top no-repeat; height:48px; color:#FFF;}
