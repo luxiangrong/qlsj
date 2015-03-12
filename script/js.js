@@ -308,4 +308,11 @@ $(function(){
 	if($(window).height()>$('body,html').height()){
 		}
 	//
+	$(".sNav a").on('click', function(e){
+		e.preventDefault();
+		var target = $(this).attr('data-target');
+		var targetEle = $("#" + target);
+		if(target && targetEle.length > 0)
+			$(window).scrollTo(targetEle, 800);
+	});
 	})
