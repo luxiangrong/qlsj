@@ -312,7 +312,8 @@ $(function(){
 		e.preventDefault();
 		var target = $(this).attr('data-target');
 		var targetEle = $("#" + target);
+		console.log(targetEle.data("originTop"));
 		if(target && targetEle.length > 0)
-			$(window).scrollTo(targetEle, 800);
+			$(window).scrollTo(targetEle.data("originTop") / 1.5 - 44 + 'px', 800);
 	});
 	})

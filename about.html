@@ -57,7 +57,7 @@
 		<div class="sNav">
 			<ul>
 				<li>
-					<a href="">中心介绍1</a>
+					<a href="javascript:void(0)" data-target="zhongxingaikuang">中心介绍1</a>
 				</li>
 				<li>
 					<a href="javascript:void(0)" data-target="last-parallax">中心介绍2</a>
@@ -87,7 +87,7 @@
 			}
 		</script>
 
-		<div class="aboutPart3 parallax-view" style="position: fixed; width: 100%; z-index: 2;" data-stellar-ratio="1.5">
+		<div class="aboutPart3 parallax-view" id="zhongxingaikuang" style="position: fixed; width: 100%; z-index: 2;" data-stellar-ratio="1.5">
 			<div class="wal">
 				<div class="aboutTitle">
 					<h1>中心概况</h1>GENERAL PROFILE
@@ -557,8 +557,8 @@
 					var reduceHeight = 0;
 					$(".parallax-view").each(function(i, item) {
 						$(this).css("top", documentHeight + "px");
+						$(this).data('originTop', documentHeight);
 						documentHeight += $(this).outerHeight();
-	
 					});
 					
 					$("body").height((parseInt($("#last-parallax").css("top").replace("px", "")) + $("#last-parallax").height() - $(window).height()) / 1 + $(window).height() - 300);
@@ -579,7 +579,7 @@
 					var params = search.split('=');
 					var i = params[1];
 					$(".aboutPart2").find('.list').find('li').eq(i).click();
-						$(window).scrollTo($('#last-parallax'), 800,  {offset: -350});
+						$(window).scrollTo($('#last-parallax').data("originTop") / 1.5 - 44 + 'px', 800);
 					
 				}
 
