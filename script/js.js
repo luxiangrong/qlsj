@@ -307,11 +307,14 @@ $(function(){
 	if($(window).height()>$('body,html').height()){
 		}
 	//
-	$(".sNav a").on('click', function(e){
-		e.preventDefault();
+	$(".sNav a[data-target]").on('click', function(e){
 		var target = $(this).attr('data-target');
 		var targetEle = $("#" + target);
-		if(target && targetEle.length > 0)
-			$(window).scrollTo(targetEle.data("originTop") / 1.5 - 44 + 'px', 800);
+		if(target && targetEle.length > 0) {
+			var originTop = targetEle.data("originTop") || 0;
+			var dataStellarRatio = targetEle.attr('data-stellar-ratio') || 1;
+			var dataStellarVerticalOffset = targetEle.attr('data-stellar-vertical-offset') || 0;
+			$(window).scrollTo(Math.ceil(originTop / dataStellarRatio) - dataStellarVerticalOffset - Math.ceil(66 / dataStellarRatio) + 'px', 800);
+		}
 	});
 	})

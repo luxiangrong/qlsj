@@ -579,10 +579,15 @@
 					var params = search.split('=');
 					var i = params[1];
 					$(".aboutPart2").find('.list').find('li').eq(i).click();
-						$(window).scrollTo($('#last-parallax').data("originTop") / 1.5 - 44 + 'px', 800);
+					
+					var originTop = $('#last-parallax').data("originTop") || 0;
+					var dataStellarRatio = $('#last-parallax').attr('data-stellar-ratio') || 1;
+					var dataStellarVerticalOffset = $('#last-parallax').attr('data-stellar-vertical-offset') || 0;
+					$(window).scrollTo(Math.ceil(originTop / dataStellarRatio) - dataStellarVerticalOffset - Math.ceil(66 / dataStellarRatio) + 'px', 800);
 					
 				}
 
+				
 			});
 		</script>
 	</body>
