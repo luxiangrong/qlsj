@@ -1,6 +1,5 @@
 $(function(){
 	var parseToMatrix = function(str) {
-		console.log(str);
 		var reg = /^matrix\((-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(-?\d+)\)$/;
 		var matches = str.match(reg);
 		if ($.isArray(matches) && matches.length == 7) {
@@ -312,7 +311,6 @@ $(function(){
 		e.preventDefault();
 		var target = $(this).attr('data-target');
 		var targetEle = $("#" + target);
-		console.log(targetEle.data("originTop"));
 		if(target && targetEle.length > 0)
 			$(window).scrollTo(targetEle.data("originTop") / 1.5 - 44 + 'px', 800);
 	});
