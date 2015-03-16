@@ -30,7 +30,7 @@
 			<div class="wal">
 				<ul class="fr">
 					<li>
-						<a href="about.html" class="aNow sNavA">中心介绍</a>
+						<a href="about.php" class="aNow sNavA">中心介绍</a>
 					</li>
 					<li>
 						<a href="Curriculum.html">课程介绍</a>
@@ -573,28 +573,23 @@
 				$(window).stellar();
 				
 				//在php环境中下面的条件判断可以通过php代码来完成
-				if(window.location.search) {
-					var search = window.location.search;
-					search = search.replace(/^\?/i, '');
-					var params = search.split('=');
-					var i = params[1];
-					$(".aboutPart2").find('.list').find('li').eq(i).click();
-					
-					<?php
-						if(isset($_REQUEST['target'])) {
-							$target = $_REQUEST['target'];
-						}
-					?>
-					
+				<?php
+					if(isset($_REQUEST['index'])) {
+						$index = $_REQUEST['index'];
+				?>
+					$(".aboutPart2").find('.list').find('li').eq(<?php echo $index ?>).click();
+				<?php
+					} 
+				?>
+				
+				<?php
+					if(isset($_REQUEST['target'])) {
+						$target = $_REQUEST['target'];
+				?>
 					$(".sNav a[data-target='<?php echo $target ?>']").click();
-					
-					// var originTop = $('#last-parallax').data("originTop") || 0;
-					// var dataStellarRatio = $('#last-parallax').attr('data-stellar-ratio') || 1;
-					// var dataStellarVerticalOffset = $('#last-parallax').attr('data-stellar-vertical-offset') || 0;
-					// $(window).scrollTo(Math.ceil(originTop / dataStellarRatio) - dataStellarVerticalOffset - Math.ceil(66 / dataStellarRatio) + 'px', 800);
-					
-				}
-
+				<?php
+					} 
+				?>
 				
 			});
 		</script>
